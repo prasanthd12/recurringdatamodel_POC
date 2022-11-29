@@ -1,9 +1,10 @@
 module.exports = app => {
-    const tutorials = require('../controllers/tutorial.controller.js');
+    const users = require('../controllers/tutorial.controller.js');
 
     const router = require('express').Router();
 
-    router.get('/:id', tutorials.findOne);
+    router.get('/:id', users.findOne);
+    router.get('/',users.findAll);
 
-    app.use('/api/tutorials', router);
+    app.use('/api/users', router);
 }
